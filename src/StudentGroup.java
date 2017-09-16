@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.Date;
 
 /**
@@ -30,24 +31,16 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudents(Student[] students) {
-		try{
  	if(students==null)
  		throw new IllegalArgumentException();
- }
- catch(IllegalArgumentException e)
- {}
-                 this.students=students;
+    else this.students=students;
 	}
 
 	@Override
 	public Student getStudent(int index) {
-	try
- {if(index==0)
+	if(index<0||index>=students.length)
                  throw new IllegalArgumentException();
- }
- catch(IllegalArgumentException e)
- {}
-                return students[index];
+        else  return students[index];
 	}
 
 	@Override
